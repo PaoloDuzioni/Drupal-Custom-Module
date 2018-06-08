@@ -1,0 +1,14 @@
+<?php
+function beprime_map_theme($existing, $type, $theme, $path) {
+  return array(
+    'beprime_map' => array(
+      'variables' => array(
+        'lat' => NULL, 
+        'lon' => NULL, 
+        'title' => NULL, 
+        'address' => NULL
+      ),
+      'template' => 'block--beprime-map'
+    ),
+  );
+}
