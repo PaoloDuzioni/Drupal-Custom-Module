@@ -1,0 +1,6 @@
+.beprime-map-block { 
+    margin-top: 3rem; 
+}
+.beprime-map-block #map{
+    height: 400px;
+}

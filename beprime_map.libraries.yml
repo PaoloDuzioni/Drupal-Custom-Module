@@ -1,0 +1,8 @@
+mapslibs:
+  css:
+    theme:
+      css/map-theme.css: {}
+  js:
+    js/map.js: {}
+  dependencies:
+    - core/jquery

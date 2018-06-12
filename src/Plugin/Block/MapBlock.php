@@ -96,6 +96,11 @@ class MapBlock extends BlockBase implements BlockPluginInterface {
       '#lon' => $lon,
       '#title' => $title,
       '#address' => $address,
+      '#attached' => array(
+        'library' => array(
+          'beprime_map/mapslibs'
+        )
+      )
     );
   }
 
