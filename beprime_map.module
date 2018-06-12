@@ -6,7 +6,8 @@ function beprime_map_theme($existing, $type, $theme, $path) {
         'lat' => NULL, 
         'lon' => NULL, 
         'title' => NULL, 
-        'address' => NULL
+        'address' => NULL,
+        'url' => NULL
       ),
       'template' => 'block--beprime-map'
     ),

@@ -29,6 +29,7 @@ class MapBlock extends BlockBase implements BlockPluginInterface {
         'maps_block_longitude' => $default_config->get('map.lon'),
         'maps_block_infotitle' => $default_config->get('map.title'),
         'maps_block_address' => $default_config->get('map.address'),
+        'maps_block_url' => $default_config->get('map.mapurl'),
       ];
     }
 
@@ -62,6 +63,12 @@ class MapBlock extends BlockBase implements BlockPluginInterface {
         '#description' => $this->t('Indirizzo da usare nella mappa'),
         '#default_value' => isset($config['maps_block_address']) ? $config['maps_block_address'] : '',
       ];
+      $form['maps_block_url'] = [
+        '#type' => 'textfield',
+        '#title' => $this->t('URL'),
+        '#description' => $this->t('URL per il link a Google Maps'),
+        '#default_value' => isset($config['maps_block_url']) ? $config['maps_block_url'] : '',
+      ];
 
       return $form;
     }
@@ -74,6 +81,7 @@ class MapBlock extends BlockBase implements BlockPluginInterface {
       $this->configuration['maps_block_longitude'] = $values['maps_block_longitude'];
       $this->configuration['maps_block_infotitle'] = $values['maps_block_infotitle'];
       $this->configuration['maps_block_address'] = $values['maps_block_address'];
+      $this->configuration['maps_block_url'] = $values['maps_block_url'];
     }
 
 
@@ -89,6 +97,7 @@ class MapBlock extends BlockBase implements BlockPluginInterface {
     $lon = $config['maps_block_longitude'];
     $title = $config['maps_block_infotitle'];
     $address = $config['maps_block_address'];
+    $url = $config['maps_block_url'];
 
     return array(
       '#theme' => 'beprime_map',
@@ -96,6 +105,7 @@ class MapBlock extends BlockBase implements BlockPluginInterface {
       '#lon' => $lon,
       '#title' => $title,
       '#address' => $address,
+      '#url' => $url,
       '#attached' => array(
         'library' => array(
           'beprime_map/mapslibs'

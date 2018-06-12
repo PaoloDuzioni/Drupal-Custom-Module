@@ -3,3 +3,4 @@ map:
   lon: '9.6730833'
   title: 'BePrime spa'
   address: 'Via Gerolamo Zanchi, 22, 24126 Bergamo BG'
+  mapurl: 'https://www.google.it/maps/place/BePrime/@45.6721567,9.673078,17z/'

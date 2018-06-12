@@ -7,9 +7,10 @@ jQuery(document).ready(function($) {
         'lat'      : mapElem.attr('data-lat'),
         'long'     : mapElem.attr('data-lon'),
         'addr'     : mapElem.attr('data-addr'),
+        'url'     : mapElem.attr('data-url'),
         'style'    : [{featureType:'all',stylers:[{saturation:-80}]},{featureType:'road.arterial',elementType:'geometry',stylers:[{hue:'#00ffee'},{saturation:50}]},{featureType:'poi.business',elementType:'labels',stylers:[{visibility:'off'}]}]
     },
-
+    
     myLatLng = new google.maps.LatLng(myMap.lat, myMap.long),
 
     mapOptions = {
@@ -22,13 +23,17 @@ jQuery(document).ready(function($) {
         styles: myMap.style
     };
 
+    console.log('Url: ' + myMap.url); 
+    console.log('Lat: ' + myMap.lat); 
+    console.log('Long: ' + myMap.long); 
+
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
     var contentString = '<div id="content">'+
     '<div id="bodyContent">'+
         '<h5>' + myMap.title + '</h5>'+
     '<div>' + myMap.addr + '</div>'+
-    '<div><a href="">Open in maps</a></div>'+
+    '<div><a target="_blank" href="' + myMap.url + '">Open in maps</a></div>'+
     '</div>'+
     '</div>';
 
